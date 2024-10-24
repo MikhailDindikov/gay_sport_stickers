@@ -9,5 +9,7 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.message-payload-provider</string>
 	</dict>
+	<key>UIFileSharingEnabled</key> 
+	<true/>
 </dict>
 </plist>
