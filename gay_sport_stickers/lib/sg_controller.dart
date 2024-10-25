@@ -19,7 +19,7 @@ class SgController extends GetxController {
       sgPacks[2].sgSelect = false;
       sgPacks[sgIndex].sgSelect = true;
       update();
-      await SharedPreferenceAppGroup.setAppGroup('group.gaysSportPacks');
+      await SharedPreferenceAppGroup.setAppGroup('group.KsoraTOOG');
       await SharedPreferenceAppGroup.setInt('sportGayType', sgIndex);
     }
   }
@@ -127,7 +127,7 @@ class SgController extends GetxController {
     final gPrefs = await SharedPreferences.getInstance();
     final interB = gPrefs.getBool('interB') ?? false;
 
-    await SharedPreferenceAppGroup.setAppGroup('group.gaysSportPacks');
+    await SharedPreferenceAppGroup.setAppGroup('group.KsoraTOOG');
     final sportGayType =
         await SharedPreferenceAppGroup.getInt('sportGayType') ?? 0;
 

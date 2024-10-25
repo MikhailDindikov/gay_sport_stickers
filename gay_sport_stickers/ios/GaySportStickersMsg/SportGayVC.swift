@@ -8,7 +8,7 @@ class SportGayVC: MSStickerBrowserViewController {
     func loadStickers() {
         var sportGayType = 0
         
-        if let sportGayDef = UserDefaults(suiteName: "group.gaysSportPacks") {
+        if let sportGayDef = UserDefaults(suiteName: "group.KsoraTOOG") {
             if (sportGayDef.value(forKey: "sportGayType") != nil) {
                 sportGayType = sportGayDef.integer(forKey: "sportGayType")
                 NSLog("\(sportGayType)")

@@ -1,12 +1,8 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gay_sport_stickers/sg_controller.dart';
 import 'package:get/get.dart';
-import 'package:shared_preference_app_group/shared_preference_app_group.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SGDetailScreen extends StatefulWidget {
   final int sgInd;
