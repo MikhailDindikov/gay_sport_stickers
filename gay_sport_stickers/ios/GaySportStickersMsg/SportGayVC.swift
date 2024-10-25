@@ -11,6 +11,7 @@ class SportGayVC: MSStickerBrowserViewController {
         if let sportGayDef = UserDefaults(suiteName: "group.gaysSportPacks") {
             if (sportGayDef.value(forKey: "sportGayType") != nil) {
                 sportGayType = sportGayDef.integer(forKey: "sportGayType")
+                NSLog("\(sportGayType)")
             }
         }
         if (sportGayType == 0) {
