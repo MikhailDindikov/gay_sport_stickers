@@ -1,6 +1,7 @@
 import 'package:apphud/apphud.dart';
 import 'package:apphud/models/apphud_models/apphud_composite_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gay_sport_stickers/sg_model.dart';
 import 'package:get/get.dart';
 import 'package:shared_preference_app_group/shared_preference_app_group.dart';
@@ -19,8 +20,9 @@ class SgController extends GetxController {
       sgPacks[2].sgSelect = false;
       sgPacks[sgIndex].sgSelect = true;
       update();
-      await SharedPreferenceAppGroup.setAppGroup('group.KsoraTOOG');
+      // await SharedPreferenceAppGroup.setAppGroup('group.KsoraTOOG');
       await SharedPreferenceAppGroup.setInt('sportGayType', sgIndex);
+      await const MethodChannel('sync').invokeMethod<bool?>('syncUD');
     }
   }
 
