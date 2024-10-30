@@ -9,13 +9,11 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.message-payload-provider</string>
 	</dict>
-	<key>UIFileSharingEnabled</key> 
+	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
 	<key>com.apple.security.files.user-selected.read-write</key>
 	<true/>
- 	<key>LSSupportsOpeningDocumentsInPlace</key>
-    <true/>
 </dict>
 </plist>
