@@ -19,7 +19,7 @@ class SgController extends GetxController {
       sgPacks[2].sgSelect = false;
       sgPacks[sgIndex].sgSelect = true;
       update();
-      await SharedPreferenceAppGroup.setAppGroup('group.gaysSportPacks');
+      //await SharedPreferenceAppGroup.setAppGroup('group.gaysSportPacks');
       await SharedPreferenceAppGroup.setInt('sportGayType', sgIndex);
     }
   }
