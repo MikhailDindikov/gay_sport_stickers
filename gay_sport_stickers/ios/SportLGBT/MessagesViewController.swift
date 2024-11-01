@@ -1,8 +1,8 @@
 //
 //  MessagesViewController.swift
-//  SportGaysStickers
+//  SportLGBT
 //
-//  Created by Mihail on 21.10.2024.
+//  Created by Mihail on 01.11.2024.
 //
 
 import UIKit
@@ -23,7 +23,6 @@ class MessagesViewController: MSMessagesAppViewController {
 
         sportGaysVC.loadStickers()
         sportGaysVC.stickerBrowserView.reloadData()
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Conversation Handling
