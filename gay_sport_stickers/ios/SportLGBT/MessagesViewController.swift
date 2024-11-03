@@ -13,7 +13,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("viewDidLoad")
         sportGaysVC = SportGayVC(stickerSize: .regular)
         sportGaysVC.view.frame = self.view.frame
 
@@ -21,19 +21,19 @@ class MessagesViewController: MSMessagesAppViewController {
         sportGaysVC.didMove(toParent: self)
         self.view.addSubview(sportGaysVC.view)
 
-        sportGaysVC.loadStickers()
-        sportGaysVC.stickerBrowserView.reloadData()
     }
     
     // MARK: - Conversation Handling
     
     override func willBecomeActive(with conversation: MSConversation) {
+        print("willBecomeActive")
+        
         sportGaysVC.loadStickers()
         sportGaysVC.stickerBrowserView.reloadData()
     }
     
     override func didResignActive(with conversation: MSConversation) {
-        self.dismiss();
+        print("didResignActive")
     }
    
     override func didReceive(_ message: MSMessage, conversation: MSConversation) {
