@@ -21,13 +21,14 @@ class SgController extends GetxController {
       update();
       //await SharedPreferenceAppGroup.setAppGroup('group.gaysSportPacks');
       await SharedPreferenceAppGroup.setInt('sportGayType', sgIndex);
+      print(await SharedPreferenceAppGroup.getInt('sportGayType'));
     }
   }
 
   Future<void> buySgPack() async {
     sportGayBuyLoad = true;
     update();
-    final pwlsSportGay = await Apphud.paywalls();
+    final pwlsSportGay = await Apphud.rawPaywalls();
     print(pwlsSportGay?.paywalls.first.products!);
 
     final purSportGay = await Apphud.purchase(

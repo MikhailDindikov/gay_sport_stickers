@@ -5,10 +5,10 @@ packages:
     dependency: "direct main"
     description:
       name: apphud
-      sha256: e84784fe7df0649441d6fc3f90b9fa83128e7bc996c6cc37ddab9fb4acfb16c4
+      sha256: "5cbe4d30f8d7527e9fc8efacc3e9bc3f953ca0088874bc3f79b558723f6e10c8"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.4"
+    version: "2.6.0"
   async:
     dependency: transitive
     description:
