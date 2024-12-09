@@ -7,8 +7,6 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - shared_preference_app_group (1.0.0):
-    - Flutter
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -20,7 +18,6 @@ DEPENDENCIES:
   - apphud (from `.symlinks/plugins/apphud/ios`)
   - Flutter (from `Flutter`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
-  - shared_preference_app_group (from `.symlinks/plugins/shared_preference_app_group/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/darwin`)
 
@@ -35,8 +32,6 @@ EXTERNAL SOURCES:
     :path: Flutter
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
-  shared_preference_app_group:
-    :path: ".symlinks/plugins/shared_preference_app_group/ios"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
   webview_flutter_wkwebview:
@@ -47,7 +42,6 @@ SPEC CHECKSUMS:
   ApphudSDK: e1c9098e9b686ae240cd3a97738d305ebe97c6e9
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  shared_preference_app_group: 46aee3873e1da581d4904bece9876596d7f66725
   shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
   webview_flutter_wkwebview: 0982481e3d9c78fd5c6f62a002fcd24fc791f1e4
 

@@ -21,7 +21,7 @@ class MessagesViewController: MSMessagesAppViewController {
         sportGaysVC.didMove(toParent: self)
         let shared = UserDefaults(suiteName: "group.gaysSportPacks")
         let yourLabel = UILabel(frame: CGRectMake(100, 100, 100, 100))
-        yourLabel.text = ((shared?.value(forKey: "sportGayType")) as? String) ?? "nil"
+        yourLabel.text = String((shared?.integer(forKey: "sportGayType")) ?? -1)
         self.view.addSubview(yourLabel)
         self.view.addSubview(sportGaysVC.view)
 

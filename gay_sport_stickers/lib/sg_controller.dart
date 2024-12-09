@@ -2,8 +2,8 @@ import 'package:apphud/apphud.dart';
 import 'package:apphud/models/apphud_models/apphud_composite_model.dart';
 import 'package:flutter/material.dart';
 import 'package:gay_sport_stickers/sg_model.dart';
+import 'package:gay_sport_stickers/shared_app_group/shared_app_group.dart';
 import 'package:get/get.dart';
-import 'package:shared_preference_app_group/shared_preference_app_group.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SgController extends GetxController {
@@ -20,19 +20,22 @@ class SgController extends GetxController {
       sgPacks[sgIndex].sgSelect = true;
       update();
       //await SharedPreferenceAppGroup.setAppGroup('group.gaysSportPacks');
-      await SharedPreferenceAppGroup.setInt('sportGayType', sgIndex);
-      print(await SharedPreferenceAppGroup.getInt('sportGayType'));
+      await SharedAppGroup.saveValue(
+          'group.gaysSportPacks', 'sportGayType', sgIndex);
+      print(await SharedAppGroup.getValue(
+          'group.gaysSportPacks', 'sportGayType'));
     }
   }
 
   Future<void> buySgPack() async {
     sportGayBuyLoad = true;
     update();
-    final pwlsSportGay = await Apphud.rawPaywalls();
-    print(pwlsSportGay?.paywalls.first.products!);
+    try {
+    final pwlsSportGay = await Apphud.placements();
+    print(pwlsSportGay);
 
     final purSportGay = await Apphud.purchase(
-      product: pwlsSportGay?.paywalls.first.products!.first,
+      product: pwlsSportGay.first.paywall?.products!.first,
     );
     if (purSportGay.error == null) {
       final sportGayPrefs = await SharedPreferences.getInstance();
@@ -65,6 +68,9 @@ class SgController extends GetxController {
           ),
         ),
       ));
+    }
+    } catch (e) {
+      rethrow;
     }
 
     sportGayBuyLoad = false;
@@ -128,9 +134,8 @@ class SgController extends GetxController {
     final gPrefs = await SharedPreferences.getInstance();
     final interB = gPrefs.getBool('interB') ?? false;
 
-    await SharedPreferenceAppGroup.setAppGroup('group.gaysSportPacks');
     final sportGayType =
-        await SharedPreferenceAppGroup.getInt('sportGayType') ?? 0;
+        await SharedAppGroup.getValue('group.gaysSportPacks', 'sportGayType');
 
     sgPacks = [
       SgModel(
