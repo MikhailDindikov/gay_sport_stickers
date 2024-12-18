@@ -32,10 +32,11 @@ import UIKit
            let sname = args["sname"] as? String,
            let key = args["key"] as? String,
            let value = args["value"] as? Int {
-            let shared = UserDefaults(suiteName: sname)
-            shared?.set(value, forKey: key)
-            shared?.synchronize()
-            result(nil)
+           let shared = UserDefaults(suiteName: sname)
+           shared?.setValue(value, forKey: key)
+           shared?.synchronize()
+    
+           result(nil)
         } else {
             result(FlutterError.init(code: "bad args", message: nil, details: nil))
         }

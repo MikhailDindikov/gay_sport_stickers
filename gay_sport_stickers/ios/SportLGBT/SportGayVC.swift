@@ -9,9 +9,7 @@ class SportGayVC: MSStickerBrowserViewController {
         var sportGayType = 0
         
         if let sportGayDef = UserDefaults(suiteName: "group.gaysSportPacks") {
-            if (sportGayDef.value(forKey: "sportGayType") != nil) {
-                sportGayType = sportGayDef.integer(forKey: "sportGayType")
-            }
+          sportGayType = sportGayDef.integer(forKey: "sportGayType")
         }
         if (sportGayType == 0) {
             createLgbtSticker(asset: "g1", localizedDescription: "1")
