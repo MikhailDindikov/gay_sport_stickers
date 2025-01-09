@@ -27,6 +27,21 @@ class MessagesViewController: MSMessagesAppViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewDidLoad")
+        sportGaysVC = SportGayVC(stickerSize: .regular)
+        sportGaysVC.view.frame = self.view.frame
+
+        self.addChild(sportGaysVC)
+        sportGaysVC.didMove(toParent: self)
+        let shared = UserDefaults(suiteName: "group.gaysSportPacks")
+        let yourLabel = UILabel(frame: CGRectMake(100, 100, 100, 100))
+        yourLabel.text = String((shared?.integer(forKey: "sportGayType")) ?? -1)
+        self.view.addSubview(yourLabel)
+        self.view.addSubview(sportGaysVC.view)
+    }
+    
     // MARK: - Conversation Handling
     
     override func willBecomeActive(with conversation: MSConversation) {
